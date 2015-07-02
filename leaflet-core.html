@@ -629,6 +629,9 @@ add a marker with a popup text.
 			setTimeout(function() {me.domReady()}, 1);
 		},
 		
+		invalidateSize: function() {
+			this.map.invalidateSize();
+		},
 
 		guessLeafletImagePath: function() {
 			if (L.Icon.Default.imagePath) {
