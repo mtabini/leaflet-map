@@ -624,12 +624,17 @@ add a marker with a popup text.
 		map: undefined,
 		
 		rendered: function() {
-			// TODO09: Workaround for removed domReady event
 			var me = this;
-			setTimeout(function() {me.domReady()}, 1);
+			// Add 100ms delay
+			window.setTimeout(function() {me.domReady()}, 100);
 		},
 		
 		invalidateSize: function() {
+			// Debounce till it finds `this.map`
+			if (!this.map) {
+				this.debounce('invalidateSize', this.invalidateSize.bind(this), 500);
+				return;
+			}
 			this.map.invalidateSize();
 		},
 
