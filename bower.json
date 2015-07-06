@@ -26,6 +26,6 @@
   ],
   "dependencies": {
     "polymer": "^1.0.0",
-    "leaflet": "^0.7.3"
+    "leaflet": "https://github.com/Leaflet/Leaflet.git"
   }
 }
